@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col">
+        <div class=" mx-auto mt-5" style="width: 150px;">
+            <img src="assets/kidao.png" alt="sua iagem aqui" class= 'rounded-circle'>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="text-center">
+            <p style="font-size: 30px">
+            Recognition App
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" class=" d-inline-block w-100 mt-5"
+            (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+            <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector" >
+                Selecionar imagens da Sala
+                <button type="button" (click)="openFileSelector()" class="btn btn-secondary">Browse Files</button>
+            </ng-template>
+        </ngx-file-drop>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class=" d-inline-block w-100 border border-primary mt-5 p-2" style=" border-radius: 35px;">
+            <p class="text-center">
+                Imagens da classe
+            </p> 
+            <div class="img-fluid" *ngIf="image_dropped == true" >
+                <div class='row' >
+                    <div class="col-md-2" *ngFor="let image of imageUrl">
+                        <!--div>
+                            {{image.image}}
+                        </div-->
+                        <img [src]="image.image"  class="rounded m-2 align-middle" style="max-height: 100px;">
+                    </div>
+                </div>
+                
+            </div> 
+            <button class="btn btn-primary float-right">Comparar</button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class=" d-inline-block w-100 border border-primary mt-5 p-2" style=" border-radius: 35px;">
+            <p class="text-center">
+                Lista de faltas
+            </p> 
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" class='' name="aluno" id=""> aluno
+                </div>
+                <div class="col">
+                    <input type="checkbox" class='' name="aluno" id=""> aluno
+                </div>
+                <div class="col">
+                    <input type="checkbox" class='' name="aluno" id=""> aluno
+                </div>
+                
+            </div> 
+            <button class="btn btn-primary float-right">Enviar</button>
+        </div>
+    </div>
+</div>
+
+
+
+
